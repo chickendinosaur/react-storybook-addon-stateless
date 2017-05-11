@@ -1,23 +1,38 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import generateHarness from '../../src/generate-props-harness';
+import generateHarness from '../src/generate-props-harness';
 
 function Counter(props) {
   return (
     <div>
       Stateless Counter: {props.value}
-      <button
-        style={{
-          display: 'block',
-          width: 40,
-          height: 40,
-        }}
-        onClick={() => {
-          props.onClick(props.value + 1);
-        }}
-      >
+      <div>
+        <button
+          style={{
+            width: 40,
+            height: 40,
+          }}
+          onClick={() => {
+            props.onAdd(props.value + 1);
+          }}
+        >
         +
       </button>
+        {
+          props.showResetBtn &&
+          <button
+            style={{
+              width: 60,
+              height: 40,
+            }}
+            onClick={() => {
+              props.onReset();
+            }}
+          >
+            Reset
+          </button>
+        }
+      </div>
     </div>
   );
 }
@@ -36,7 +51,7 @@ storiesOf('react-storybook-addon-stateless', module)
     return (
       <CounterComponent
         value={0}
-        onClick={function onClick(value) {
+        onAdd={function (value) {
           this.setProps({
             value,
           });

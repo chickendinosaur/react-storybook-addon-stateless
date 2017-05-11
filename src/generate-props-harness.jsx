@@ -6,6 +6,10 @@ export default function generatePropsHarness(StatelessComponent) {
     constructor(props) {
       super(props);
 
+      this._initialProps = {
+        ...props,
+      };
+
       this.state = {
         ...props,
       };

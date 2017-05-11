@@ -33,6 +33,7 @@
     "arrow-parens": 0,
     "no-underscore-dangle": 0,
     "no-console": 0,
+    "func-names": 0,
     "jsx-a11y/img-has-alt": 0,
     "react/prop-types": 0
   }

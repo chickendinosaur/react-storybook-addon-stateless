@@ -1,8 +1,8 @@
 import { configure } from '@kadira/storybook';
 
-import './index.css';
+import './index.scss';
 
-const components = require.context('./stories', true, /\.stories\.jsx$/);
+const components = require.context('../stories', true, /\.stories\.jsx$/);
 
 function loadStories() {
   components.keys().forEach(filename => components(filename));
