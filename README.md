@@ -42,7 +42,7 @@ const CounterComponent = generateHarness(Counter);
   value={0}
   onClick={function (value) {
     this.setProps({
-      value,
+      value
     });
   }}
 />

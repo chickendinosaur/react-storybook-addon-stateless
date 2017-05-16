@@ -7,11 +7,11 @@ export default function generatePropsHarness(StatelessComponent) {
       super(props);
 
       this._initialProps = {
-        ...props,
+        ...props
       };
 
       this.state = {
-        ...props,
+        ...props
       };
     }
 
@@ -19,7 +19,7 @@ export default function generatePropsHarness(StatelessComponent) {
       this.setState(() => {
         action('props:update')(nextState);
 
-        return nextState;
+        nextState;
       });
     }
 

@@ -10,7 +10,7 @@ function Counter(props) {
         <button
           style={{
             width: 40,
-            height: 40,
+            height: 40
           }}
           onClick={() => {
             props.onAdd(props.value + 1);
@@ -23,7 +23,7 @@ function Counter(props) {
           <button
             style={{
               width: 60,
-              height: 40,
+              height: 40
             }}
             onClick={() => {
               props.onReset();
@@ -53,7 +53,7 @@ storiesOf('react-storybook-addon-stateless', module)
         value={0}
         onAdd={function (value) {
           this.setProps({
-            value,
+            value
           });
         }}
       />
