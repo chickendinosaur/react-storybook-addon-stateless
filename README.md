@@ -53,7 +53,7 @@ const CounterComponent = generateHarness(Counter);
 
 ## Installation
 
-* git clone https://githu .com/chickendinosaur/react-storybook-addon-stateless.git
+* git clone https://github.com/chickendinosaur/react-storybook-addon-stateless.git
 * cd react-storybook-addon-stateless
 * npm install
 
