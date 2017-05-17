@@ -14,7 +14,7 @@ module.exports = {
       // Styles.
       {
         test: /\.(css|scss)$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: 'style-loader!css-loader'
       },
       // Images.
       {
