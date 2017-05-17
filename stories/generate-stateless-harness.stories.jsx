@@ -1,6 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
-import generateHarness from '../src/generate-props-harness';
+import { storiesOf, action } from '@kadira/storybook';
+import generateHarness from '../src/generate-stateless-harness';
 
 function Counter(props) {
   return (
@@ -13,7 +13,7 @@ function Counter(props) {
             height: 40
           }}
           onClick={() => {
-            props.onAdd(props.value + 1);
+            props.onIncrement(props.value + 1);
           }}
         >
         +
@@ -51,10 +51,12 @@ storiesOf('react-storybook-addon-stateless', module)
     return (
       <CounterComponent
         value={0}
-        onAdd={function (value) {
+        onIncrement={function (value) {
           this.setProps({
             value
           });
+
+          action('Increment')(value);
         }}
       />
     );

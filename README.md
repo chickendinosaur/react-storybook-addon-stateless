@@ -1,6 +1,5 @@
 High order component generator that allows stateless components to interact with themselves.
 Gives the ability to test a stateless component as if using a state management system like such as Redux.
-Logs out an update:props action in Storybook each time this.setProps is called.
 
 ---
 
@@ -40,10 +39,12 @@ const CounterComponent = generateHarness(Counter);
 // or .bind(this). It must remain self scoped.
 <CounterComponent
   value={0}
-  onClick={function (value) {
+  onIncrement={function (value) {
     this.setProps({
       value
     });
+
+    action('Increment')(value);
   }}
 />
 ```

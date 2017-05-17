@@ -7,20 +7,20 @@ module.exports = {
         test: /\.js$|\.jsx$/,
         loaders: [
           'react-hot-loader/webpack',
-          'babel-loader?cacheDirectory=true',
+          'babel-loader?cacheDirectory=true'
         ],
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       // Styles.
       {
         test: /\.(css|scss)$/,
-        loader: 'style-loader!css-loader!sass-loader',
+        loader: 'style-loader!css-loader!sass-loader'
       },
       // Images.
       {
         test: /\.(svg|jpg|jpeg|gif|png|webp|ico)$/,
-        loader: 'file-loader?name=assets/images/[name].[ext]',
-      },
-    ],
-  },
+        loader: 'file-loader?name=assets/images/[name].[ext]'
+      }
+    ]
+  }
 };

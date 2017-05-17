@@ -1,15 +1,16 @@
 {
   "name": "@chickendinosaur/react-storybook-addon-stateless",
   "version": "0.0.1",
-  "main": "generate-props-harness.js",
+  "main": "generate-stateless-harness.js",
   "files": [
     "**/*"
   ],
   "scripts": {
     "build": "npm run clean && babel src -d lib && cp package.json lib & cp README.md lib & cp LICENSE lib",
     "clean": "rm -rf lib",
-    "deploy": "npm run test && eslint src --fix && eslint example --fix && npm run build && npm publish lib",
-    "storybook": "opn http://localhost:9001 && start-storybook -p 9001 -c .storybook"
+    "deploy": "npm run test && npm run build && npm publish lib",
+    "storybook": "npm run test && opn http://localhost:9001 && start-storybook -p 9001 -c .storybook",
+    "test": "babel-tape-runner test/**/*.test.* && eslint src --fix && eslint stories --fix && csscomb src"
   },
   "author": {
     "name": "John Pittman",
@@ -37,33 +38,32 @@
     "url": "https://github.com/chickendinosaur/react-storybook-addon-stateless/issues"
   },
   "homepage": "https://github.com/chickendinosaur/react-storybook-addon-stateless#readme",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
   "dependencies": {},
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "babel-tape-runner": "^2.0.1",
-    "benchmark": "^2.1.4",
     "css-loader": "^0.28.1",
+    "csscomb": "^4.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "file-loader": "^0.11.1",
-    "node-sass": "^4.5.2",
     "opn-cli": "^3.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.7",
-    "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",

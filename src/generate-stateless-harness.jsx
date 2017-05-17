@@ -1,8 +1,7 @@
 import React from 'react';
-import { action } from '@kadira/storybook';
 
-export default function generatePropsHarness(StatelessComponent) {
-  return class StatelessPropsHarness extends React.Component {
+export default function generateStatefulHarness(StatelessComponent) {
+  return class StatefulHarness extends React.Component {
     constructor(props) {
       super(props);
 
@@ -17,9 +16,7 @@ export default function generatePropsHarness(StatelessComponent) {
 
     setProps = (nextState) => {
       this.setState(() => {
-        action('props:update')(nextState);
-
-        nextState;
+        return nextState;
       });
     }
 
