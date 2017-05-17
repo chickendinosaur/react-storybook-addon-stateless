@@ -14,7 +14,7 @@ npm install @chickendinosaur/react-storybook-addon-stateless
 ## Usage
 
 ```javascript
-import generateHarness from '@chickendinosaur/react-storybook-addon-stateless';
+import generateStatelessHarness from '@chickendinosaur/react-storybook-addon-stateless';
 
 // Stateless component.
 function Counter(props) {
@@ -31,7 +31,7 @@ function Counter(props) {
 }
 
 // Generate the stateful component wrapper.
-const CounterComponent = generateHarness(Counter);
+const CounterComponent = generateStatelessHarness(Counter);
 
 // The generated stateful component exposes a 'setProps' method that simulates
 // the ability to update the components own props on the fly.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import generateHarness from '../src/generate-stateless-harness';
+import generateStatelessHarness from '../src/generate-stateless-harness';
 
 function Counter(props) {
   return (
@@ -37,7 +37,7 @@ function Counter(props) {
   );
 }
 
-const CounterComponent = generateHarness(Counter);
+const CounterComponent = generateStatelessHarness(Counter);
 
 storiesOf('react-storybook-addon-stateless', module)
   .addDecorator((story) => {
