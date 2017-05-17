@@ -18,7 +18,7 @@
     "url": "https://github.com/chickendinosaur"
   },
   "license": "MIT",
-  "description": "High order stateful wrapper to help test stateless components.",
+  "description": "High order stateful wrapper to help test React stateless components.",
   "keywords": [
     "react",
     "stateful",
