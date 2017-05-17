@@ -1,6 +1,6 @@
 {
   "name": "@chickendinosaur/react-storybook-addon-stateless",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "generate-stateless-harness.js",
   "files": [
     "**/*"
